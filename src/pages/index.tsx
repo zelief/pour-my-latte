@@ -5,22 +5,46 @@ import UnderlineLink from '@/components/links/UnderlineLink';
 import Seo from '@/components/Seo';
 
 export default function HomePage() {
-  const types = ['piccolo', 'cappucino', 'latte'];
-  const arts = [
-    'heart',
-    'tulip',
-    'rosetta',
-    'winged heart',
-    'rippled heart',
-    'winged tulip',
+  const latteArtDrinks = ['Piccollo', 'Cappucino', 'Hot Latte'];
+  const types = [
+    ...latteArtDrinks,
+    'Iced Latte',
+    'Iced Americano',
+    'Es Kopi Susu',
+    'Espresso',
   ];
+  const arts = [
+    'Heart',
+    'Tulip',
+    'Rosetta',
+    'Winged Heart',
+    'Rippled Heart',
+    'Winged Tulip',
+  ];
+
+  const esKopiSusuVariant = ['Coconut Delight', 'Stevia'];
 
   const [chosenType, setChosenType] = useState('');
   const [chosenArt, setChosenArt] = useState('');
+  const [kopsusVariant, setKopsusVariant] = useState('');
 
   function getLatteArt() {
-    setChosenType(types[Math.floor(Math.random() * types.length)]);
-    setChosenArt(arts[Math.floor(Math.random() * arts.length)]);
+    const drink = types[Math.floor(Math.random() * types.length)];
+    setChosenType(`Drink: ${drink}`);
+    if (latteArtDrinks.includes(drink)) {
+      setChosenArt(`Art: ${arts[Math.floor(Math.random() * arts.length)]}`);
+    } else {
+      setChosenArt('');
+    }
+    if (drink == 'Es Kopi Susu') {
+      setKopsusVariant(
+        `Varian: ${
+          esKopiSusuVariant[
+            Math.floor(Math.random() * esKopiSusuVariant.length)
+          ]
+        }`
+      );
+    }
   }
 
   return (
@@ -37,8 +61,9 @@ export default function HomePage() {
               ) : (
                 <div>
                   Our Suggestion: <br />
-                  Drink: {chosenType} <br />
-                  Art: {chosenArt} <br />
+                  {chosenType} <br />
+                  {chosenArt} <br />
+                  {kopsusVariant}
                 </div>
               )}
             </div>
