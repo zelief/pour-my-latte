@@ -24,17 +24,17 @@ export default function HomePage() {
 
   const esKopiSusuVariant = ['Coconut Delight', 'Stevia'];
 
-  const [chosenType, setChosenType] = useState('');
-  const [chosenArt, setChosenArt] = useState('');
+  const [drinkType, setDrinktype] = useState('');
+  const [artDesign, setArtDesign] = useState('');
   const [kopsusVariant, setKopsusVariant] = useState('');
 
   function getLatteArt() {
     const drink = types[Math.floor(Math.random() * types.length)];
-    setChosenType(`Drink: ${drink}`);
+    setDrinktype(`Drink: ${drink}`);
     if (latteArtDrinks.includes(drink)) {
-      setChosenArt(`Art: ${arts[Math.floor(Math.random() * arts.length)]}`);
+      setArtDesign(`Art: ${arts[Math.floor(Math.random() * arts.length)]}`);
     } else {
-      setChosenArt('');
+      setArtDesign('');
     }
     if (drink == 'Es Kopi Susu') {
       setKopsusVariant(
@@ -44,7 +44,9 @@ export default function HomePage() {
           ]
         }`
       );
+      return;
     }
+    setKopsusVariant('');
   }
 
   return (
@@ -56,13 +58,13 @@ export default function HomePage() {
           <div className='layout flex min-h-screen flex-col items-center justify-center text-center'>
             <h1 className='mt-4'>Hi, Let&apos;s Make a Coffee ☕</h1>
             <div>
-              {chosenType == '' ? (
+              {drinkType == '' ? (
                 ''
               ) : (
                 <div>
                   Our Suggestion: <br />
-                  {chosenType} <br />
-                  {chosenArt} <br />
+                  {drinkType} <br />
+                  {artDesign} <br />
                   {kopsusVariant}
                 </div>
               )}
