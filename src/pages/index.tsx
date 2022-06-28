@@ -5,13 +5,14 @@ import UnderlineLink from '@/components/links/UnderlineLink';
 import Seo from '@/components/Seo';
 
 export default function HomePage() {
-  const latteArtDrinks = ['Piccollo', 'Cappucino', 'Hot Latte'];
+  const latteArtDrinks = ['Piccollo', 'Cappucino', 'Hot Latte', 'Hot Mocha'];
   const types = [
     ...latteArtDrinks,
     'Iced Latte',
     'Iced Americano',
     'Es Kopi Susu',
     'Espresso',
+    'Iced Mocha',
   ];
   const arts = [
     'Heart',
@@ -21,16 +22,19 @@ export default function HomePage() {
     'Rippled Heart',
     'Winged Tulip',
   ];
+  const beans = ['arabica', 'blend'];
 
   const esKopiSusuVariant = ['Coconut Delight', 'Stevia'];
 
   const [drinkType, setDrinktype] = useState('');
   const [artDesign, setArtDesign] = useState('');
   const [kopsusVariant, setKopsusVariant] = useState('');
+  const [beanVariant, setBeanVariant] = useState('');
 
   function getLatteArt() {
     const drink = types[Math.floor(Math.random() * types.length)];
     setDrinktype(`Drink: ${drink}`);
+    setBeanVariant(`Bean: ${beans[Math.floor(Math.random() * beans.length)]}`);
     if (latteArtDrinks.includes(drink)) {
       setArtDesign(`Art: ${arts[Math.floor(Math.random() * arts.length)]}`);
     } else {
@@ -64,6 +68,7 @@ export default function HomePage() {
                 <div>
                   Our Suggestion: <br />
                   {drinkType} <br />
+                  {beanVariant} <br />
                   {artDesign} <br />
                   {kopsusVariant}
                 </div>
