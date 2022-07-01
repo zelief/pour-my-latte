@@ -5,7 +5,13 @@ import UnderlineLink from '@/components/links/UnderlineLink';
 import Seo from '@/components/Seo';
 
 export default function HomePage() {
-  const latteArtDrinks = ['Piccollo', 'Cappucino', 'Hot Latte', 'Hot Mocha'];
+  const latteArtDrinks = [
+    'Piccollo',
+    'Cappucino',
+    'Hot Latte',
+    'Hot Mocha',
+    'Flat White',
+  ];
   const types = [
     ...latteArtDrinks,
     'Iced Latte',
