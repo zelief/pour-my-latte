@@ -30,7 +30,12 @@ export default function HomePage() {
   ];
   const beans = ['arabica', 'blend'];
 
-  const esKopiSusuVariant = ['Coconut Delight', 'Stevia', 'Sari Tebu'];
+  const esKopiSusuVariant = [
+    'Coconut Delight',
+    'Stevia',
+    'Sari Tebu',
+    'Brown Sugar',
+  ];
 
   const [drinkType, setDrinktype] = useState('');
   const [artDesign, setArtDesign] = useState('');
