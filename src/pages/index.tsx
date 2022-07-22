@@ -19,6 +19,7 @@ export default function HomePage() {
     'Es Kopi Susu',
     'Espresso',
     'Iced Mocha',
+    'Affogato',
   ];
   const arts = [
     'Heart',
