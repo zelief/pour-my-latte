@@ -8,9 +8,9 @@ export default function HomePage() {
   const latteArtDrinks = [
     'Piccollo',
     'Cappucino',
-    'Hot Latte',
+    'Hot Capucino',
     'Hot Mocha',
-    'Flat White',
+    'Cortado',
   ];
   const types = [
     ...latteArtDrinks,
