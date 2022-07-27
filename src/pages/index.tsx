@@ -23,12 +23,14 @@ export default function HomePage() {
     'Affogato',
   ];
   const arts = [
-    'Heart',
+    //'Heart',
     'Tulip',
     'Rosetta',
     'Winged Heart',
     'Rippled Heart',
     'Winged Tulip',
+    'Slosetta',
+    'Slow Rippled Heart',
   ];
   const beans = ['arabica', 'blend'];
 
