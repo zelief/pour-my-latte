@@ -7,11 +7,12 @@ import Seo from '@/components/Seo';
 export default function HomePage() {
   const latteArtDrinks = [
     'Piccollo',
-    'Brown Small Latte',
+    'Brown Latte',
     'Hot Capucino',
     'Hot Mocha',
     'Cortado (Double shot)',
     'Flat White (Double shot)',
+    'Cafe Latte (Double Shot)',
   ];
   const types = [
     ...latteArtDrinks,
