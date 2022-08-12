@@ -12,7 +12,8 @@ export default function HomePage() {
     'Hot Mocha',
     'Cortado (Double shot)',
     'Flat White (Double shot)',
-    'Cafe Latte (Double Shot)',
+    'Cafe Latte (200/275ml) (Double Shot)',
+    'Goth Latte',
   ];
   const types = [
     ...latteArtDrinks,
@@ -22,6 +23,8 @@ export default function HomePage() {
     'Espresso',
     'Iced Mocha',
     'Affogato',
+    'Tubruk',
+    'Filter Coffee',
   ];
   const arts = [
     //'Heart',
