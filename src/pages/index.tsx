@@ -1,76 +1,83 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import Layout from '@/components/layout/Layout';
 import UnderlineLink from '@/components/links/UnderlineLink';
 import Seo from '@/components/Seo';
+const latteArtDrinks = [
+  'Piccollo',
+  'Brown Latte',
+  'Hot Capucino',
+  'Hot Mocha',
+  'Cortado (Double shot)',
+  'Flat White (Double shot)',
+  'Cafe Latte (200/275ml) (Double Shot)',
+  'Goth Latte',
+];
+const types = [
+  ...latteArtDrinks,
+  'Iced Latte',
+  'Iced Americano',
+  'Es Kopi Susu',
+  'Espresso',
+  'Iced Mocha',
+  'Affogato',
+  'Tubruk',
+  'Filter Coffee',
+];
+const arts = [
+  //'Heart',
+  'Tulip',
+  'Rosetta',
+  'Winged Heart',
+  'Rippled Heart',
+  'Winged Tulip',
+  'Slosetta',
+  'Slow Rippled Heart',
+];
+const beans = ['arabica', 'blend'];
+
+const esKopiSusuSweeteners = [
+  'Coconut Delight',
+  'Stevia',
+  'Sari Tebu',
+  'Brown Sugar',
+];
 
 export default function HomePage() {
-  const latteArtDrinks = [
-    'Piccollo',
-    'Brown Latte',
-    'Hot Capucino',
-    'Hot Mocha',
-    'Cortado (Double shot)',
-    'Flat White (Double shot)',
-    'Cafe Latte (200/275ml) (Double Shot)',
-    'Goth Latte',
-  ];
-  const types = [
-    ...latteArtDrinks,
-    'Iced Latte',
-    'Iced Americano',
-    'Es Kopi Susu',
-    'Espresso',
-    'Iced Mocha',
-    'Affogato',
-    'Tubruk',
-    'Filter Coffee',
-  ];
-  const arts = [
-    //'Heart',
-    'Tulip',
-    'Rosetta',
-    'Winged Heart',
-    'Rippled Heart',
-    'Winged Tulip',
-    'Slosetta',
-    'Slow Rippled Heart',
-  ];
-  const beans = ['arabica', 'blend'];
-
-  const esKopiSusuVariant = [
-    'Coconut Delight',
-    'Stevia',
-    'Sari Tebu',
-    'Brown Sugar',
-  ];
-
   const [drinkType, setDrinktype] = useState('');
   const [artDesign, setArtDesign] = useState('');
-  const [kopsusVariant, setKopsusVariant] = useState('');
+  const [kopsusSweetener, setKopsusSweetener] = useState('');
   const [beanVariant, setBeanVariant] = useState('');
 
-  function getLatteArt() {
-    const drink = types[Math.floor(Math.random() * types.length)];
-    setDrinktype(`Drink: ${drink}`);
-    setBeanVariant(`Bean: ${beans[Math.floor(Math.random() * beans.length)]}`);
-    if (latteArtDrinks.includes(drink)) {
-      setArtDesign(`Art: ${arts[Math.floor(Math.random() * arts.length)]}`);
+  function setString(
+    setFunction: React.Dispatch<React.SetStateAction<string>>,
+    arrayToBeRandomized: string[]
+  ) {
+    setFunction(
+      arrayToBeRandomized[
+        Math.floor(Math.random() * arrayToBeRandomized.length)
+      ]
+    );
+  }
+
+  function getDrink() {
+    setString(setDrinktype, types);
+    setString(setBeanVariant, beans);
+  }
+
+  useEffect(() => {
+    if (latteArtDrinks.includes(drinkType)) {
+      setString(setArtDesign, arts);
     } else {
       setArtDesign('');
     }
-    if (drink == 'Es Kopi Susu') {
-      setKopsusVariant(
-        `Varian: ${
-          esKopiSusuVariant[
-            Math.floor(Math.random() * esKopiSusuVariant.length)
-          ]
-        }`
-      );
-      return;
+
+    if (drinkType == 'Es Kopi Susu') {
+      setString(setKopsusSweetener, esKopiSusuSweeteners);
+    } else {
+      setKopsusSweetener('');
     }
-    setKopsusVariant('');
-  }
+  }, [drinkType]);
 
   return (
     <Layout>
@@ -86,17 +93,17 @@ export default function HomePage() {
               ) : (
                 <div>
                   Our Suggestion: <br />
-                  {drinkType} <br />
-                  {beanVariant} <br />
-                  {artDesign} <br />
-                  {kopsusVariant}
+                  Drink: {drinkType} <br />
+                  Bean: {beanVariant} <br />
+                  {artDesign && <span>Art: {artDesign}</span>} <br />
+                  {kopsusSweetener && <span>Sweetener: {kopsusSweetener}</span>}
                 </div>
               )}
             </div>
             <button
               type='button'
               className='mt-6 mr-2 mb-2 rounded-lg bg-gradient-to-r from-green-400 via-green-500 to-green-600 px-5 py-2.5 text-center text-sm font-medium text-white shadow-lg shadow-green-500/50 hover:bg-gradient-to-br focus:outline-none focus:ring-4 focus:ring-green-300 dark:shadow-lg dark:shadow-green-800/80 dark:focus:ring-green-800'
-              onClick={getLatteArt}
+              onClick={getDrink}
             >
               Go!
             </button>
