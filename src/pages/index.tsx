@@ -7,7 +7,7 @@ const latteArtDrinks = [
   'Piccollo',
   'Brown Latte',
   'Hot Capucino',
-  'Hot Mocha',
+  // 'Hot Mocha',
   'Cortado (Double shot)',
   'Flat White (Double shot)',
   'Cafe Latte (200/275ml) (Double Shot)',
@@ -16,13 +16,14 @@ const latteArtDrinks = [
 const types = [
   ...latteArtDrinks,
   'Iced Latte',
-  'Iced Americano',
+  // 'Iced Americano',
   'Es Kopi Susu',
-  'Espresso',
-  'Iced Mocha',
+  // 'Espresso',
+  // 'Iced Mocha',
   'Affogato',
   'Tubruk',
   'Filter Coffee',
+  'Japanese Filter',
 ];
 const arts = [
   //'Heart',
