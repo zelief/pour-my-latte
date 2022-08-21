@@ -1,0 +1,21 @@
+type Drink {
+  art: Boolean!
+  cups: [String!]!
+  id: ID!
+  name: String!
+  score: Int!
+}
+
+type Mutation
+
+type Query {
+  """
+  Find a drink by ID
+  """
+  drink(id: ID!): Drink!
+
+  """
+  Find all drinks
+  """
+  drinks: [Drink!]!
+}
