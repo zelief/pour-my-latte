@@ -44,7 +44,7 @@ type DrinksData = {
   };
 };
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const res = await fetch(
     'https://coffee-randomizer-backend.herokuapp.com/graphql',
     {
@@ -72,5 +72,6 @@ export async function getServerSideProps() {
 
   return {
     props: { drinks: resJson.data.drinks },
+    revalidate: 10,
   };
 }
