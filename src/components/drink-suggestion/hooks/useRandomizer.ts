@@ -29,11 +29,16 @@ export function useRandomizer(drinks: Array<Drink>) {
   };
 }
 
-function setRandom<T>(
+function setRandom<T extends { score: number }>(
   setFunction: React.Dispatch<React.SetStateAction<T | undefined>>,
   arrayToBeRandomized: T[]
 ) {
-  setFunction(
-    arrayToBeRandomized[Math.floor(Math.random() * arrayToBeRandomized.length)]
-  );
+  const newArr: T[] = [];
+  arrayToBeRandomized.forEach((item) => {
+    for (let i = 0; i < item.score; i++) {
+      newArr.push(item);
+    }
+  });
+
+  setFunction(newArr[Math.floor(Math.random() * newArr.length)]);
 }

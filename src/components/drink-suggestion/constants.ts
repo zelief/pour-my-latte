@@ -7,9 +7,10 @@ export const arts = [
   { name: 'Winged Tulip', score: 5 },
   { name: 'Slosetta', score: 5 },
   { name: 'Slow Rippled Heart', score: 4 },
+  { name: 'Swan', score: 4 },
 ];
 
 export const beans = [
-  { name: 'arabica', score: 5 },
-  { name: 'blend', score: 3 },
+  { name: 'Vanilla Shortbread', score: 5 },
+  { name: 'Robusta Strawberry', score: 5 },
 ];
