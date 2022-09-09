@@ -13,4 +13,8 @@ export const arts = [
 export const beans = [
   { name: 'Vanilla Shortbread', score: 5 },
   { name: 'Robusta Strawberry', score: 5 },
+  { name: 'Robusta Temanggung', score: 4 },
+  { name: 'Halu Banana', score: 5 },
+  { name: 'Ijen', score: 5 },
+  { name: 'Rancabali', score: 5 },
 ];
