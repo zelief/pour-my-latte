@@ -10,8 +10,4 @@ export const arts = [
   { name: 'Swan', score: 4 },
 ];
 
-export const beans = [
-  { name: 'Robusta Strawberry', score: 5 },
-  { name: 'Ijen', score: 5 },
-  { name: 'Rancabali', score: 5 },
-];
+export const beans = [{ name: 'Ijen', score: 5 }];
