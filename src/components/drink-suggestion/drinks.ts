@@ -1,5 +1,6 @@
 export const drinks = [
   { name: 'Affogato', art: false },
+  { name: 'Affogato', art: false },
   { name: 'V60 Filter', art: false },
   { name: 'Clever Filter', art: false },
   { name: 'Japanese Filter (v60)', art: false },
@@ -14,5 +15,8 @@ export const drinks = [
   { name: 'Cortado', art: true },
   { name: 'Cafe Latte', art: true },
   { name: 'Espresso', art: false },
-  { name: 'Hot Capuccino', art: true },
+  { name: 'Capuccino', art: true },
+  { name: 'Flat White', art: true },
+  { name: 'Vietnam Drip', art: false },
+  { name: 'Iced Vietnam Drip', art: false },
 ];
