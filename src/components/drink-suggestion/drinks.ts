@@ -8,6 +8,7 @@ export const drinks = [
   { name: 'Japanese Filter (v60)', art: false },
   { name: 'Japanese Filter (Clever)', art: false },
   { name: 'Tubruk susu', art: false },
+  { name: 'Tubruk', art: false },
   { name: 'Kopi susu Amstir', art: false },
   { name: 'Mocha', art: true },
   { name: 'Iced Americano', art: false },
