@@ -18,8 +18,10 @@ export const drinks = [
   { name: 'Cortado', art: true },
   { name: 'Cafe Latte', art: true },
   { name: 'Espresso', art: false },
+  { name: 'Ristretto', art: false },
   { name: 'Capuccino', art: true },
   { name: 'Flat White', art: true },
+  { name: 'Magic', art: true },
   { name: 'Vietnam Drip', art: false },
   { name: 'Iced Vietnam Drip', art: false },
 ];
