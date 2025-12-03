@@ -22,5 +22,6 @@ export const drinks = [
   { name: 'Magic', art: true },
   { name: 'Vietnam Drip', art: false },
   { name: 'Iced Vietnam Drip', art: false },
+  { name: 'Iced Latte', art: false },
   { name: 'Dirty Latte', art: false },
 ];
