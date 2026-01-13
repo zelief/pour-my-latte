@@ -20,6 +20,7 @@ export const drinks = [
   { name: 'Capuccino', art: true },
   { name: 'Flat White', art: true },
   { name: 'Magic', art: true },
+  { name: 'Split', art: true },
   { name: 'Vietnam Drip', art: false },
   { name: 'Iced Vietnam Drip', art: false },
   { name: 'Iced Latte', art: false },
